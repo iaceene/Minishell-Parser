@@ -70,26 +70,25 @@ cd Minishell-Parser
 ## Example Commands & Parsing Output
 ```
 yaajagro@e1r7p7 $ ls -la
-CMD [ls]
-ARG [-la]
+COMMAND --> [ls] ARG [-la]
 
-yaajagro@e1r7p7 $ ls -la | < file1 < file2 cat -e
-CMD [ls]
-ARG [-la]
-infile [file1]
-infile [file2]
-CMD [cat]
-ARG [-e]
+yaajagro@e1r7p7 $ ls | ls -la | cat -e | grep $USER
+COMMAND --> [ls] 
+COMMAND --> [ls] ARG [-la]
+COMMAND --> [cat] ARG [-e]
+COMMAND --> [grep] ARG [yaajagro]
 
-yaajagro@e1r7p7 $ cat <<eof
-> this is herdoc
+yaajagro@e1r7p7 $ ls > file1 < file2 >> Toapp
+COMMAND --> [ls] 
+OUTFILE [file1]
+INFILE [file2]
+APPEND [Toapp]
+
+yaajagro@e1r7p7 $ << eof cat -e
+> this is heredoc
 > eof
-CMD [cat]
-herdoc fd [4] content [this is herdoc]
-
-yaajagro@e1r7p7 $ echo $PATH
-CMD [echo]
-ARG [/home/yaajagro/bin:/usr/local/sbin:/usr/bin:/sbin:/bin]
+COMMAND --> [cat] ARG [-e]
+HERDOC fd [4] content [this is heredoc]
 ```
 
 ## 👤 Author  
