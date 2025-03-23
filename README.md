@@ -1,5 +1,7 @@
 # 🐚 Minishell Parser
 
+![Alt Text](/img/perv.png)
+
 ```diff
 + yaajagro@elr7p7 $ ls -la
 - COMMAND --> [ls] ARG [-la]
@@ -26,7 +28,6 @@
 - HERDOC fd [4] content [this heredoc]
 - COMMAND --> [ls] ARG [-la]n style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
 ```
-![Alt Text](/img/perv.png)
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
 🔹 **Lexical analysis** – Tokenizing user input into meaningful components.  
