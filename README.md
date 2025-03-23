@@ -25,7 +25,6 @@
 - COMMAND --> [cat] ARG [-e]
 - HERDOC fd [4] content [this heredoc]
 - COMMAND --> [ls] ARG [-la]n style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
-</p>
 ```
 
 ## 📌 Overview  
