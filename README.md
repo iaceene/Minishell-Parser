@@ -4,15 +4,41 @@ Here's a more readable and well-structured `README.md`:
 
 # 🐚 Minishell Parser  
 
-![Screenshot from 2025-03-23 00-50-05](https://github.com/user-attachments/assets/0d80f8c2-20bf-44dd-9f13-357b30a530b0)
-
-
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
 🔹 **Lexical analysis** – Tokenizing user input into meaningful components.  
 🔹 **Syntax validation** – Ensuring correct command structure and detecting errors.  
 🔹 **Expansion handling** – Processing environment variables and special characters.  
 🔹 **Command structuring** – Organizing parsed data for execution.  
+
+## Project Structure
+```
+components/parser/
+├── expander/
+│   ├── expander.c
+│   ├── expander_utiles.c
+│   ├── expander_utiles_tree.c
+│   ├── expander_utiles_two.c
+│   ├── handlers.c
+├── herdoc/
+│   ├── herdoc.c
+│   ├── herdoc_utile_one.c
+├── init/
+│   ├── parser.c
+│   ├── parser_utiles.c
+├── lexer/
+│   ├── final_step.c
+│   ├── lexer.c
+│   ├── lexer_utiles.c
+│   ├── syntax_checker.c
+│   ├── syntax_utiles.c
+│   ├── syntax_utiles_two.c
+├── prompt/
+│   ├── get_cli.c
+│   ├── prompt.c
+│   ├── prompt_utiles.c
+└── parser.h
+```
 
 ## ✨ Features  
 ✅ Tokenizes shell commands into structured data.  
@@ -21,34 +47,48 @@ This repository contains the **parsing module** for a custom **Minishell** imple
 ✅ Expands **environment variables** (`$VAR`).  
 ✅ Validates syntax before execution.  
 
-## 📂 Project Structure  
-```
-📁 minishell-parser/
- ├── parser.h         # Header file defining parser structures & functions
- ├── lexer.c          # Tokenization logic
- ├── syntax.c         # Syntax validation functions
- ├── expander.c       # Variable expansion & quote handling
- ├── utils.c          # Helper functions
- ├── README.md        # Project documentation
-```
+# Minishell Parser
 
-## 🚀 Installation  
-Clone the repository:  
+
+## Features
+- **Lexical Analysis**: Tokenizes input commands.
+- **Syntax Checking**: Validates command structures.
+- **Expansion**: Handles variables, wildcards, and heredoc.
+- **Command Parsing**: Builds AST-like structures for execution.
+- **Redirections & Pipes**: Parses input/output redirections and command pipelines.
+
+## Installation & Usage
 ```sh
-git clone https://github.com/iaceene/minishell-parser.git
+git clone https://github.com/yaajagro/minishell-parser.git
 cd minishell-parser
+make
+./minishell
 ```
-Compile it as part of your **Minishell** project.
 
-## 🛠 Usage  
-Include `parser.h` in your project and use `lexer_init()` to tokenize shell input. Example:  
-```c
-t_node *tokens = lexer_init("echo $HOME | grep user");
+## Example Commands & Parsing Output
+```
+yaajagro@e1r7p7 $ ls -la
+CMD [ls]
+ARG [-la]
+
+yaajagro@e1r7p7 $ ls -la | < file1 < file2 cat -e
+CMD [ls]
+ARG [-la]
+infile [file1]
+infile [file2]
+CMD [cat]
+ARG [-e]
+
+yaajagro@e1r7p7 $ cat <<eof
+> this is herdoc
+> eof
+CMD [cat]
+herdoc fd [4] content [this is herdoc]
+
+yaajagro@e1r7p7 $ echo $PATH
+CMD [echo]
+ARG [/home/yaajagro/bin:/usr/local/sbin:/usr/bin:/sbin:/bin]
 ```
 
 ## 👤 Author  
-Developed by **[Yassine Ajagrou](https://github.com/iaceene)** as part of the **42** curriculum.  
-
----
-
-This version improves readability with spacing, emojis, and a clearer structure. Let me know if you need further tweaks! 🚀
+Developed by **[Yassine Ajagrou](https://github.com/iaceene)** as part of the **1337**. 
