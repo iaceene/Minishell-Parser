@@ -1,8 +1,5 @@
-Here's a more readable and well-structured `README.md`:  
-
----
-
-# 🐚 Minishell Parser  
+# 🐚 Minishell Parser
+![Pic](https://github.com/user-attachments/assets/f6c3b6ef-e905-48d5-b774-9aaeca818410)
 
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
