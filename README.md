@@ -4,6 +4,9 @@ Here's a more readable and well-structured `README.md`:
 
 # 🐚 Minishell Parser  
 
+![Screenshot from 2025-03-23 00-50-05](https://github.com/user-attachments/assets/0d80f8c2-20bf-44dd-9f13-357b30a530b0)
+
+
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
 🔹 **Lexical analysis** – Tokenizing user input into meaningful components.  
