@@ -1,6 +1,28 @@
 # 🐚 Minishell Parser
 
-![Screenshot from 2025-03-23 01-31-35](https://github.com/user-attachments/assets/dc444596-bd2c-4fbd-9815-02d3e74d5f8c)
+<p>
+  <span style="color: green;">yaajagro@elr7p7 $ ls -la</span><br>
+  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
+  <span style="color: green;">yaajagro@elr7p7 $ ls | ls -la | cat -e | grep $USER</span><br>
+  <span style="color: blue;">COMMAND --> [ls]</span><br>
+  <span style="color: blue;">PIPED TO</span><br>
+  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
+  <span style="color: blue;">PIPED TO</span><br>
+  <span style="color: blue;">COMMAND --> [cat] ARG [-e]</span><br>
+  <span style="color: blue;">PIPED TO</span><br>
+  <span style="color: blue;">COMMAND --> [grep] ARG [yaajagro]</span><br>
+  <span style="color: green;">yaajagro@elr7p7 $ ls > file1 < file2 >> appFile</span><br>
+  <span style="color: blue;">COMMAND --> [ls]</span><br>
+  <span style="color: blue;">OUTFILE [file1]</span><br>
+  <span style="color: blue;">INFILE [file2]</span><br>
+  <span style="color: blue;">APPEND [appFile]</span><br>
+  <span style="color: green;">yaajagro@elr7p7 $ << eof cat -e | ls -la</span><br>
+  <span style="color: green;">> this heredoc</span><br>
+  <span style="color: green;">> eof</span><br>
+  <span style="color: blue;">COMMAND --> [cat] ARG [-e]</span><br>
+  <span style="color: blue;">HERDOC fd [4] content [this heredoc]</span><br>
+  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
+</p>
 
 
 ## 📌 Overview  
