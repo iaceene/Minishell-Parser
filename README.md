@@ -1,29 +1,32 @@
 # 🐚 Minishell Parser
 
-<p>
-  <span style="color: green;">yaajagro@elr7p7 $ ls -la</span><br>
-  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
-  <span style="color: green;">yaajagro@elr7p7 $ ls | ls -la | cat -e | grep $USER</span><br>
-  <span style="color: blue;">COMMAND --> [ls]</span><br>
-  <span style="color: blue;">PIPED TO</span><br>
-  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
-  <span style="color: blue;">PIPED TO</span><br>
-  <span style="color: blue;">COMMAND --> [cat] ARG [-e]</span><br>
-  <span style="color: blue;">PIPED TO</span><br>
-  <span style="color: blue;">COMMAND --> [grep] ARG [yaajagro]</span><br>
-  <span style="color: green;">yaajagro@elr7p7 $ ls > file1 < file2 >> appFile</span><br>
-  <span style="color: blue;">COMMAND --> [ls]</span><br>
-  <span style="color: blue;">OUTFILE [file1]</span><br>
-  <span style="color: blue;">INFILE [file2]</span><br>
-  <span style="color: blue;">APPEND [appFile]</span><br>
-  <span style="color: green;">yaajagro@elr7p7 $ << eof cat -e | ls -la</span><br>
-  <span style="color: green;">> this heredoc</span><br>
-  <span style="color: green;">> eof</span><br>
-  <span style="color: blue;">COMMAND --> [cat] ARG [-e]</span><br>
-  <span style="color: blue;">HERDOC fd [4] content [this heredoc]</span><br>
-  <span style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
-</p>
+```diff
++ yaajagro@elr7p7 $ ls -la
+- COMMAND --> [ls] ARG [-la]
 
++ yaajagro@elr7p7 $ ls | ls -la | cat -e | grep $USER
+- COMMAND --> [ls]
+- PIPED TO
+- COMMAND --> [ls] ARG [-la]
+- PIPED TO
+- COMMAND --> [cat] ARG [-e]
+- PIPED TO
+- COMMAND --> [grep] ARG [yaajagro]
+
++ yaajagro@elr7p7 $ ls > file1 < file2 >> appFile
+- COMMAND --> [ls]
+- OUTFILE [file1]
+- INFILE [file2]
+- APPEND [appFile]
+
++ yaajagro@elr7p7 $ << eof cat -e | ls -la
++ > this heredoc
++ > eof
+- COMMAND --> [cat] ARG [-e]
+- HERDOC fd [4] content [this heredoc]
+- COMMAND --> [ls] ARG [-la]n style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
+</p>
+```
 
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
