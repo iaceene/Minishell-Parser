@@ -1,5 +1,6 @@
 # 🐚 Minishell Parser
-![Pic](https://github.com/user-attachments/assets/f6c3b6ef-e905-48d5-b774-9aaeca818410)
+
+![Screenshot from 2025-03-23 01-31-35](https://github.com/user-attachments/assets/dc444596-bd2c-4fbd-9815-02d3e74d5f8c)
 
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
@@ -71,21 +72,25 @@ COMMAND --> [ls] ARG [-la]
 
 yaajagro@e1r7p7 $ ls | ls -la | cat -e | grep $USER
 COMMAND --> [ls] 
+PIPED TO
 COMMAND --> [ls] ARG [-la]
+PIPED TO
 COMMAND --> [cat] ARG [-e]
+PIPED TO
 COMMAND --> [grep] ARG [yaajagro]
 
-yaajagro@e1r7p7 $ ls > file1 < file2 >> Toapp
+yaajagro@e1r7p7 $ ls > file1 < file2 >> appFile
 COMMAND --> [ls] 
 OUTFILE [file1]
 INFILE [file2]
-APPEND [Toapp]
+APPEND [appFile]
 
-yaajagro@e1r7p7 $ << eof cat -e
-> this is heredoc
+yaajagro@e1r7p7 $ << eof cat -e | ls -la
+> this heredoc
 > eof
 COMMAND --> [cat] ARG [-e]
-HERDOC fd [4] content [this is heredoc]
+HERDOC fd [4] content [this heredoc]
+COMMAND --> [ls] ARG [-la]
 ```
 
 ## 👤 Author  
