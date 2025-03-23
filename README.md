@@ -59,10 +59,12 @@ components/parser/
 
 ## Installation & Usage
 ```sh
-git clone https://github.com/yaajagro/minishell-parser.git
-cd minishell-parser
-make
-./minishell
+git clone https://github.com/iaceene/Minishell-Parser.git
+cd Minishell-Parser
+# if you are using Mac
+./Parser_Mac
+# if you are using Linux
+./Parser_Linux
 ```
 
 ## Example Commands & Parsing Output
