@@ -2,6 +2,7 @@
 
 ![Screenshot from 2025-03-23 01-31-35](https://github.com/user-attachments/assets/dc444596-bd2c-4fbd-9815-02d3e74d5f8c)
 
+
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
 🔹 **Lexical analysis** – Tokenizing user input into meaningful components.  
