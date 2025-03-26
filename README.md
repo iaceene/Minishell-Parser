@@ -2,32 +2,6 @@
 
 ![Alt Text](/img/minishell.jpg)
 
-```diff
-+ yaajagro@elr7p7 $ ls -la
-- COMMAND --> [ls] ARG [-la]
-
-+ yaajagro@elr7p7 $ ls | ls -la | cat -e | grep $USER
-- COMMAND --> [ls]
-- PIPED TO
-- COMMAND --> [ls] ARG [-la]
-- PIPED TO
-- COMMAND --> [cat] ARG [-e]
-- PIPED TO
-- COMMAND --> [grep] ARG [yaajagro]
-
-+ yaajagro@elr7p7 $ ls > file1 < file2 >> appFile
-- COMMAND --> [ls]
-- OUTFILE [file1]
-- INFILE [file2]
-- APPEND [appFile]
-
-+ yaajagro@elr7p7 $ << eof cat -e | ls -la
-+ > this heredoc
-+ > eof
-- COMMAND --> [cat] ARG [-e]
-- HERDOC fd [4] content [this heredoc]
-- COMMAND --> [ls] ARG [-la]n style="color: blue;">COMMAND --> [ls] ARG [-la]</span><br>
-```
 ## 📌 Overview  
 This repository contains the **parsing module** for a custom **Minishell** implementation in C. The parser is responsible for:  
 🔹 **Lexical analysis** – Tokenizing user input into meaningful components.  
