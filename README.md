@@ -1,6 +1,6 @@
 # 🐚 Minishell Parser
 
-![Alt Text](/img/perv.png)
+![Alt Text](/img/minishell.jpg)
 
 ```diff
 + yaajagro@elr7p7 $ ls -la
