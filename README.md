@@ -94,4 +94,5 @@ COMMAND --> [ls] ARG [-la]
 ```
 
 ## 👤 Author  
-Developed by **[Yassine Ajagrou](https://github.com/iaceene)** as part of the **1337**. 
+Developed by **[Yassine Ajagrou](https://github.com/iaceene)** For the source code or questions, [DM me on Instagram](https://www.instagram.com/yassine.ajagrou)
+. 
