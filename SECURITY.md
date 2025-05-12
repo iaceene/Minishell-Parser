@@ -21,7 +21,7 @@ If you discover a security vulnerability in the Minishell parser, we strongly en
 
 ### How to Report
 
-Please email us at **[your-email@example.com]** with the following details:
+Please email us at **[yassineajagrou986@gmail.com]** with the following details:
 - Description of the vulnerability
 - Steps to reproduce (if possible)
 - Impact assessment (e.g., data corruption, arbitrary code execution, etc.)
